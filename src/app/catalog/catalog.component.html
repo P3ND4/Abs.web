@@ -1,0 +1,15 @@
+<div class="catalog-container">
+    <article *ngFor="let i of products" class="card">
+        <figure class="img-container">
+            <img src={{i.image}} alt="product image" class="product-img">
+        </figure>
+        <div calss="card-content">
+            <p class="description">{{ i.description }}</p>
+            <p class="price">{{ i.price | currency:'USD' }}</p>
+            <button mat-raised-button color="blue" disabled class="btn-card">
+                Agregar al carrito
+            </button>
+        </div>
+
+    </article>
+</div>
