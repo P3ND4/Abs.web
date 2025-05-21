@@ -1,0 +1,13 @@
+<div class="carousel-container">
+    <button mat-icon-button (click)="prev()" [class]="['scroll', 'left']">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+  
+    <mat-card class="product-card">
+      <img mat-card-image [src]="products[currentIndex].image" class="carousel-img" [alt]="products[currentIndex].name">
+    </mat-card>
+  
+    <button mat-icon-button (click)="next()" [class]="['scroll', 'right']">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+  </div>

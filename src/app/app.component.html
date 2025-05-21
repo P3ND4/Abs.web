@@ -16,23 +16,23 @@
     </div>
     <mat-list class="custom-list">
       <mat-divider class="custom-divider"></mat-divider>
-      <mat-list-item [ngClass]="{'active': true}" class="list-item">
-        <span class="item-label" routerLink=""> Home </span>
+      <mat-list-item [ngClass]="{'active': isActive('/')}" class="list-item" routerLink="" (click)="sidenav.close()">
+        <span class="item-label" > Home </span>
       </mat-list-item>
-      <mat-list-item class="list-item">
-        <span class="item-label" routerLink="catalog"> Galeria </span>
+      <mat-list-item class="list-item" [ngClass]="{'active': isActive('/catalog')}" routerLink="catalog" (click)="sidenav.close()">
+        <span class="item-label" > Galeria </span>
       </mat-list-item>
     </mat-list>
   </mat-sidenav>
 
   <mat-sidenav-content class="sidenav-cont">
-
     <mat-toolbar color="primary" class="mat-elevation-z4 sticky-header">
       <button mat-icon-button class="menu-button" (click)="sidenav.open()">
         <mat-icon style="color: aliceblue;">menu</mat-icon>
       </button>
       <img src="favicon-96x96.png" alt="" class="abs-logo">
     </mat-toolbar>
+
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
     <!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
     <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
@@ -40,12 +40,14 @@
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
     <!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+    <div class="main-content">
+      <router-outlet />
+    </div>
 
-    <router-outlet />
-
+    
+    
     <mat-toolbar color="primary" class="mat-elevation-z4 bottom-bar">
 
     </mat-toolbar>
   </mat-sidenav-content>
-
 </mat-sidenav-container>
