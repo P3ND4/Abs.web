@@ -3,13 +3,22 @@
         <figure class="img-container">
             <img src={{i.image}} alt="product image" class="product-img">
         </figure>
-        <div calss="card-content">
+        <div class="card-body">
             <p class="description">{{ i.description }}</p>
             <p class="price">{{ i.price | currency:'USD' }}</p>
-            <button mat-raised-button color="blue" disabled class="btn-card">
+            <button mat-raised-button color="blue"  class="btn-card">
                 Agregar al carrito
+                <mat-icon>
+                    add
+                </mat-icon>
             </button>
         </div>
 
     </article>
+
+    <mat-progress-spinner *ngIf="loading" class="loading-spinner"
+        mode="indeterminate"
+        color="primary"
+        diameter="50">
+    </mat-progress-spinner>
 </div>

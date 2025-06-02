@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-
+import {register} from 'swiper/element/bundle';
+register()
 
 
 @Component({
@@ -11,10 +12,13 @@ import { MatButtonModule } from '@angular/material/button';
   imports: [MatIconModule, MatButtonModule, MatCardModule, CommonModule],
   standalone: true,
   templateUrl: './carousel.component.html',
-  styleUrl: './carousel.component.css'
-})
+  styleUrl: './carousel.component.css',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  })
 export class CarouselComponent {
   currentIndex = 0;
+  
+
   products = [
     {
       id: 1,
@@ -32,6 +36,16 @@ export class CarouselComponent {
     },
     // Añade más productos...
   ];
+  swiperConfig = {
+    slidesPerView: 1,
+    loop: true,
+    navigation: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false
+    }
+  };
+
 
   next() {
     this.currentIndex = (this.currentIndex + 1) % this.products.length;

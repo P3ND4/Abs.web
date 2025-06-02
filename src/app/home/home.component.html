@@ -1,11 +1,44 @@
 <div class="design-container">
+    @defer {
+    <figure>
+        <img src="/mug-img.png" alt="undi seño" class="des-img">
+    </figure>
+    }
+
+    <div class="txt-cont">
+        @if ((windowWidth < 600) && (windowWidth> 480)) {
+            <h1 class="slogan">Tu diseño,
+                <br />
+                tu estilo
+            </h1>
+            }
+            @else {
+            <h1 class="slogan">Tu diseño, tu estilo</h1>
+            }
+            <h5 class="info">Personaliza tus artículos con un diseño único y exclusivo. ¡Hazlo tuyo!</h5>
+    </div>
 
 </div>
+<div class="home-container">
 
-<app-carousel></app-carousel>
+    @defer {
 
-<div class="categories-container">
-    <header class="categories-header">
-        <h2> Categorías </h2>
-    </header>
+        <app-carousel></app-carousel>
+    }
+
+    @defer () {}
+    <div class="categories-container">
+        <header class="categories-header">
+            <h2> Categorías </h2>
+        </header>
+        <div class="categories-container-content">
+            <div *ngFor="let category of categories" class="categories">
+                <mat-icon class="cat-ico" fontSet="material-icons-outlined">
+                    local_cafe
+                </mat-icon>
+                <p class="cat-name">{{category.categorie}}</p>
+            </div>
+
+        </div>
+    </div>
 </div>

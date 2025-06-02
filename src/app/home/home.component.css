@@ -1,16 +1,124 @@
 .design-container{
-    background-color: rgba(255, 199, 45, 0.918);
+    background-color: #ffc219;
     width: 100%;
+    display: flex;
+    flex-direction: row;
     aspect-ratio: 16/4;
 }
+
+.des-img{
+    height: 100%;
+    width: auto;
+    margin-left: 50px;
+}
+.txt-cont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding-inline: 15px;
+}
+
 
 .categories-container{
     display: flex;
     flex-direction: column;
     margin: 20px;
-    height: 300px;
+    min-height: 300px;
 }
 .categories-header{
     display: flex;
     justify-content: center;
+}
+.categories-container-content{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 10px;
+    
+}
+.home-container{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.categories{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color:  rgb(255, 194, 25);
+    border-radius: 15px;
+    border-top: 20px solid  rgb(255, 194, 25);
+    width: 180px;
+    height: 100px;
+    transition: transform 0.3s ease;
+}
+.categories:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+
+.cat-ico{
+    font-size: 60px;
+    height: auto;
+    width: auto;
+}
+
+
+@media (max-width: 768px) {
+    .design-container{
+        aspect-ratio: 11/4;
+    }
+
+
+    .des-img{
+        margin-left: 0;
+    }
+
+    .home-container{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .design-container{
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .des-img{
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .home-container{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .categories{
+        height: 70px;
+        width: 100px;
+    }
+    .cat-ico{
+        font-size: 40px;
+    }
+    .cat-name{
+        height: 8px;
+    }
+
+}
+@media (min-width: 1366px){
+    .slogan{
+        font-size: 70px;
+    }
+    .info{
+        font-size: 30px;
+    }
 }

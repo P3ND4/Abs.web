@@ -1,13 +1,11 @@
 <div class="carousel-container">
-    <button mat-icon-button (click)="prev()" [class]="['scroll', 'left']">
-      <mat-icon>chevron_left</mat-icon>
-    </button>
-  
-    <mat-card class="product-card">
-      <img mat-card-image [src]="products[currentIndex].image" class="carousel-img" [alt]="products[currentIndex].name">
-    </mat-card>
-  
-    <button mat-icon-button (click)="next()" [class]="['scroll', 'right']">
-      <mat-icon>chevron_right</mat-icon>
-    </button>
-  </div>
+  <swiper-container class="product-card"
+  slides-per-view="1"
+  pagination="true"
+  autoplay='{"delay": 5000, "disableOnInteraction": false}'
+  >
+    <swiper-slide *ngFor="let elemnt of products">
+      <img [src]="elemnt.image" class="carousel-img" [alt]="elemnt.name">
+    </swiper-slide>
+  </swiper-container>
+</div>

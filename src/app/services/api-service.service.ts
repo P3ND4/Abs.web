@@ -9,7 +9,7 @@ import { IProduct } from '../model/product';
 })
 export class ApiServiceService {
 
-  baseUrl: string = 'https://absapi-production.up.railway.app/';
+  baseUrl: string = 'http://localhost:4000/';
 
   constructor(private http: HttpClient) {
 
@@ -19,6 +19,7 @@ export class ApiServiceService {
     return this.http.get<IProduct[]>(`${this.baseUrl}products/all`).pipe(
       map((response: IProduct[]) => {
         return response;
+      
       }),
       catchError((error) => {
         console.error('Error fetching products:', error);
