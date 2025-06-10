@@ -1,24 +1,23 @@
 <div class="catalog-container">
     <article *ngFor="let i of products" class="card">
-        <figure class="img-container">
-            <img src={{i.image}} alt="product image" class="product-img">
-        </figure>
+        <div class="img-container">
+            <img src={{i.image}} alt="product-image" class="product-img">
+        </div>
         <div class="card-body">
-            <p class="description">{{ i.description }}</p>
-            <p class="price">{{ i.price | currency:'USD' }}</p>
-            <button mat-raised-button color="blue"  class="btn-card">
-                Agregar al carrito
+            <p class="description"> {{i.description}} </p>
+            <p class="price">{{ i.price | currency:'EUR' }}</p>
+            <button mat-raised-button color="blue" class="btn-card">
+                <span class="btn-label">
+                    Agregar
+                </span>
                 <mat-icon>
-                    add
+                    shopping_cart
                 </mat-icon>
             </button>
         </div>
 
     </article>
 
-    <mat-progress-spinner *ngIf="loading" class="loading-spinner"
-        mode="indeterminate"
-        color="primary"
-        diameter="50">
+    <mat-progress-spinner *ngIf="loading" class="loading-spinner" mode="indeterminate" color="primary" diameter="50">
     </mat-progress-spinner>
 </div>
